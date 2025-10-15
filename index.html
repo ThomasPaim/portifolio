@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Thomas Paim</title>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="#" class="logo">
+            <span>T</span>
+            P
+        </a>
+
+        <ul class="navlist">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#sobre-mim">Sobre mim</a>
+            </li>
+
+            <li>
+                <a href="#skills">Habilidades</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projetos</a>
+            </li>
+        </ul>
+
+
+     
+          <button class="menu-icon"><i class="fa-solid fa-bars"></i></button>
+
+
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-div">
+            <div class="home-text">
+
+                <span class="hello">Olá, eu sou</span>
+
+                <h1>Thomas Paim da Silva</h1>
+                <h3>Desenvolvedor Back-end</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sobre-mim" id="sobre-mim">
+        <div class="about-img">
+            <img src="./img/photo_perfil.jpg" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>
+                Sobre
+                <span>MIM</span>
+            </h2>
+
+            <p>• Técnico em informática (3/3).</p>
+            <p>• Sistemas para Internet (2/6).</p>
+
+            <div class="social">
+                <a href="https://www.linkedin.com/in/thomas-paimm/" class="btn-socials" target="_blank">
+                    <span>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </span>
+                </a>
+
+                <a href="https://github.com/ThomasPaim" class="btn-socials" target="_blank">
+                    <span>
+                        <i class="fa-brands fa-github"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skiils">
+
+        <div class="main-text">
+            <h2>Habilidades</h2>
+
+        </div>
+
+        <div id="languages-skills" class="languages-skills">
+
+            <div class="box">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java</h3>
+            </div>
+
+            <div class="box">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+            </div>
+
+            <div class="box">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="box">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="box">
+                <i class="fa-brands fa-js"></i>
+                <h3>JS</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+
+
+        <div class="main-text">
+            <h2>Projetos</h2>
+
+        </div>
+
+        <div id="projects-list" class="projects-list">
+
+            <div class="card-project">
+
+                <div id="img-project" class="img-project">
+                    <img src="./img/e-commerce2.png" alt="foto do e-commerce de camisas de time">
+                </div>
+
+                <div id="description-project" class="description-project">
+                    <h2>E-commerce de camisas de time</h2>
+                    <p>E-commerce de camisas de time desenvolvido com HTML, CSS e JavaScript. O projeto teve como
+                        foco o aperfeiçoamento de habilidades em armazenamento de dados com LocalStorage,
+                        manipulação de classes (ClassList), funções, e dinamismo na interface por meio da
+                        manipulação do DOM (appendChild), entre outros conceitos fundamentais do JavaScript.
+
+                    </p>
+
+                    <a href="https://github.com/ThomasPaim/loja_camisa_time" target="_blank">
+                        <span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </span>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+<script>
+    let card_project = document.querySelectorAll('.card-project')
+    let img_project = document.querySelectorAll('.img-project')
+    let description_project = document.querySelectorAll('.description-project')
+
+    card_project.forEach((card, index) => {
+        card.addEventListener('mouseover', () => {
+            description_project[index].style.display = 'block'
+            img_project[index].style.display = 'none'
+        })
+
+        card.addEventListener('mouseout', () => {
+            description_project[index].style.display = 'none'
+            img_project[index].style.display = 'block'
+        })
+    })
+
+
+    const menuIcon = document.querySelector('.menu-icon')
+    const navList = document.querySelector('.navlist')
+
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('active')
+        menuIcon.classList.toggle('open') 
+    });
+
+</script>
+
+</html>
